@@ -1,10 +1,41 @@
 body {
   padding-top: 50px;
+  font-family:arial;
   
 }
 
 .jumbotron{
 	background:url(../images/bg.jpg) no-repeat;
+}
+
+a{
+	color:#B0C4DE;
+}
+ul.success li ,ul.info li,ul.error li{
+	margin:20px 0 20px 0;
+	padding:15px;
+	border:1px solid transparent;
+	border-radius: 5px;
+	list-style: none;
+}
+
+ul.success li{
+	color:#3c763d;
+	background:#90EE90;
+	border-color: #008000;
+
+}
+ul.info li{
+	color:#A52A2A;
+	background:#90EE90;
+	border-color: #FFA07A;
+
+}
+ul.error li{
+	color:#FF0000;
+	background:#FFB6C1;
+	border-color: #8B0000;
+
 }
 
 footer{

@@ -34,6 +34,16 @@ var UserSchema=mongoose.Schema({
 //makes this object available outside this file
 var User=module.exports=mongoose.model('User',UserSchema);
 
+module.exports.comparePassword=function(candidatePassword,hash,callback){
+	bcrypt.compare(candidatePassword,hash,function(err,isMatch){
+		if(err) return callback(err);
+		callback(null,isMatch);
+	});
+}
+
+module.exports.getUserById=function(id,callback){
+	User.findById(id,callback);
+}
 module.exports.getUserByUserName=function(username,callback){
 	var query={username:username};
 	User.findOne(query,callback);

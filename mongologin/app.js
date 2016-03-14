@@ -69,6 +69,13 @@ app.use(function (req, res, next) {
   res.locals.messages = require('express-messages')(req, res);
   next();
 });
+//to make sure that once ur logged in u are not asked to register
+app.get('*', function(req, res, next) {
+  res.locals.user=req.user||null;
+  next();
+});
+
+
 //if you are in home page : call routes
 app.use('/', routes);
 
