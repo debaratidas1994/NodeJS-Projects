@@ -1,0 +1,16 @@
+extends layout
+
+block content
+	h1 Login
+	p Please Login Below
+	.container
+		form(method='post', action='/users/login',enctype='multipart/form-data')
+			h1 Contact
+			.form-group
+				label Username
+				input.form-control(type='text', name='username', placeholder='Enter Username')
+			.form-group
+				label Password
+				input.form-control(type='password', name='password', placeholder='Enter password')
+			
+			input.button.btn.btn-default(type='submit',value='Register') 

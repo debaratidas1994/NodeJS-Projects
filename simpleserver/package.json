@@ -1,0 +1,12 @@
+{
+  "name": "simpleserver",
+  "version": "0.0.0",
+  "description": "Very basic web server",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodejs server.js"
+  },
+  "author": "Debarati Das",
+  "license": "BSD-2-Clause"
+}
