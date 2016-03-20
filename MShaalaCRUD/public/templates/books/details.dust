@@ -1,0 +1,32 @@
+
+{>"layouts/master" /}
+
+{<body}
+<div class="row">
+  <div class="large-10 columns">
+        <div class="small-6 columns">
+          <img src="/img/{book.cover}">
+      	</div>
+
+        <div class="small-6 columns">
+          <h3>{book.title}</h3>
+          <ul>
+          	<li>Institution Name : {book.institute}</li>
+          	<li>Sponsored by : {book.sponsor}</li>
+          	<li>Genre : {book.category}</li>
+          </ul>
+          <br>
+          <div class="price">
+          Price of this Course: <span>${book.price}</span>
+          <h4> About Course : <h4>
+          <p>{book.description}</p>
+          
+          <a class="button success">Add To Cart</a>
+          </div>
+      	</div>
+    
+  </div>
+</div>
+
+	
+{/body}

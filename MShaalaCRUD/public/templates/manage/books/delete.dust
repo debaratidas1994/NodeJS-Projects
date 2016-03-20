@@ -1,0 +1,5 @@
+{>"layouts/manage" /}
+
+{<body}
+   <h2> Deleted Item </h2>
+{/body}

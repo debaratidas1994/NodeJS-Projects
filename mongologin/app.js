@@ -1,4 +1,5 @@
 var express = require('express');
+//so we can use path.join, so we load it
 var path = require('path');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
@@ -9,6 +10,7 @@ var session=require('express-session')
 //auth
 var passport=require('passport')
 var LocalStrategy=require('passport-local').Strategy;
+//this is needed to parse the body of request
 var bodyParser = require('body-parser');
 var multer = require('multer');
 var flash = require('connect-flash');
@@ -21,15 +23,17 @@ var users = require('./routes/users'); // reg form and login form
 //instantiate express object into app // core instance
 var app = express();
 
-// view engine setup
-app.set('views', path.join(__dirname, 'views'));
+// view engine setup : im using jade so use this
 app.set('view engine', 'jade');
+//current folder+join+string views
+app.set('views', path.join(__dirname, 'views'));
 //Handle File uploads
 //all the upload destination is in a new folder called uploads
 app.use(multer({dest:'./uploads'}).single('singleInputFileName'));
 // uncomment after placing your favicon in /public
 //app.use(favicon(__dirname + '/public/favicon.ico'));
-//middleware 
+
+//middleware register !
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));

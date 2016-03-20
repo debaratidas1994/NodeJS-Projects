@@ -1,0 +1,85 @@
+{>"layouts/manage" /}
+
+{<body}
+
+  <div class="row">
+    <div class="large-12 columns">
+    <h2>Add Course</h2>
+        <form method="post" action="/manage/books">
+
+        <div class="row">
+          <div class="large-12 columns">
+            <label>Course Title
+              <input name="title" type="text"/>
+            </label>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="large-12 columns">
+            <label>Institute Name
+              <input name="institute" type="text"/>
+            </label>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="large-12 columns">
+            <label>Sponsor
+              <input name="sponsor" type="text"/>
+            </label>
+          </div>
+        </div>
+
+        <div class="row">
+            <div class="large-12 columns">
+              <label>Category
+                <select name="category">
+                {#categories}
+                  <option value="{.name}">{.name}</option>
+                {/categories}
+                </select>
+              </label>
+            </div>
+          </div>
+          
+          <div class="row">
+            <div class="large-12 columns">
+              <label>Description
+                <textarea name="description"></textarea>
+              </label>
+            </div>
+          </div>
+
+        <div class="row">
+          <div class="large-12 columns">
+            <label>Price of Course
+              <input type="number" name="price"/>
+            </label>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="large-12 columns">
+            <label>Cover URL
+              <input name="cover" type="text"/>
+            </label>
+          </div>
+        </div>
+
+
+        <div class="row">
+          <div class="large-12 columns">
+       
+              <input type="submit" class="button" value="Submit"/>
+           
+          </div>
+        </div>
+
+        <input type="hidden" name="_csrf" value="{_csrf}"/>
+          
+      </form>
+      </div>
+      </div>
+ 
+{/body}
