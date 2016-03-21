@@ -3,6 +3,7 @@
 var Book = require('../models/bookModel');
 var Category = require('../models/categoryModel');
 
+//Router to display the index page
 module.exports = function (router) {
     router.get('/books', function (req, res) {   
         Book.find({}, function(err, books){
@@ -18,12 +19,12 @@ module.exports = function (router) {
         })            
     });
 
-
+// On the url / render index page
     router.get('/', function (req, res) {   
         res.render('manage/index');             
     });
 
-
+// On the get categories and render categories index
     router.get('/categories', function (req, res) {   
         Category.find({}, function(err, categories){
             if(err){
@@ -39,6 +40,7 @@ module.exports = function (router) {
     });
 
 
+// On the addition of courses page render add courses
     router.get('/books/add', function(req, res){
         Category.find({},function(err, categories){
             if(err){
@@ -53,7 +55,7 @@ module.exports = function (router) {
         });
     });
 
-
+// When the add form is filled a post request is sent to save the newly added form
     router.post('/books', function(req, res){
         var title = req.body.title && req.body.title.trim();
         var category = req.body.category && req.body.category.trim();
@@ -114,7 +116,8 @@ module.exports = function (router) {
         });
     });
 
-    // Edit book
+    
+    // Save the edits through a post request
     router.post('/books/edit/:id', function(req, res){
         var title = req.body.title && req.body.title.trim();
         var category = req.body.category && req.body.category.trim();
