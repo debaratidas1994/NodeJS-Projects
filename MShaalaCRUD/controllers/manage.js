@@ -63,7 +63,6 @@ module.exports = function (router) {
         var publisher = req.body.publisher && req.body.publisher.trim();
         var price = req.body.price && req.body.price.trim();
         var description= req.body.description && req.body.description.trim();
-        var title = req.body.title && req.body.title.trim();
         var cover = req.body.cover && req.body.cover.trim();
 
         if (title == '' || price == '') {
