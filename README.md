@@ -13,6 +13,6 @@ This repository illustrates the mini projects done to learn NodeJS concepts.
 
 5.Nodeblog
 
-6.toDO list
+6.TO-DO list
 
 
